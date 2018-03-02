@@ -50,6 +50,25 @@ namespace LinqExploration
 
             foreach (string item in query3)
                 Console.WriteLine(item);
+
+            /* 
+                create table People (
+                    Name nvarchar(32) primary key not null,
+                    Age int not null,
+                    CanCode bit not null
+                );
+            */
+
+            // The CLR equivalent (Linq to SQL)
+            [Table(Name="People")]
+            public class Person {
+                [Column(DbType = "nvarchar(32) not null", Id = true)]
+                public string Name;
+                [Column]
+                public int Age;
+                [Column]
+                public bool CanCode;
+            }
         }
     }
 }
