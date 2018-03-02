@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
+using MySql.Data.MySqlClient;
 
 namespace LinqExploration
 {
@@ -69,6 +70,9 @@ namespace LinqExploration
                 [Column]
                 public bool CanCode;
             }
+
+            // Attempt to connect to MySQL DB
+
         }
     }
 }
