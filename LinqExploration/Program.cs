@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
-using MySql.Data.MySqlClient;
 
 namespace LinqExploration
 {
@@ -61,15 +60,15 @@ namespace LinqExploration
             */
 
             // The CLR equivalent (Linq to SQL)
-            [Table(Name="People")]
-            public class Person {
-                [Column(DbType = "nvarchar(32) not null", Id = true)]
-                public string Name;
-                [Column]
-                public int Age;
-                [Column]
-                public bool CanCode;
-            }
+            //[Table(Name="People")]
+            //public class Person {
+            //    [Column(DbType = "nvarchar(32) not null", Id = true)]
+            //    public string Name;
+            //    [Column]
+            //    public int Age;
+            //    [Column]
+            //    public bool CanCode;
+            //}
 
             // Attempt to connect to MySQL DB
 
