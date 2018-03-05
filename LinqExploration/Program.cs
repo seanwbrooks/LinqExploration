@@ -71,7 +71,8 @@ namespace LinqExploration
             //}
 
             // Attempt to connect to MySQL DB
-
+            var db = new DBConnect();
+            Console.WriteLine(db);
         }
     }
 }
