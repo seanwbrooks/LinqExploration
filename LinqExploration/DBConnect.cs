@@ -24,8 +24,8 @@ namespace LinqExploration
         private void Initialize()
         {
             server = "localhost";
-            database = "connectcsharptomysql";
-            uid = "1";
+            database = "LinqExploration";
+            uid = "root";
             password = "Schwinn1";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
@@ -234,7 +234,7 @@ namespace LinqExploration
             }
             catch (IOException ex)
             {
-                MessageBox.Show("Error , unable to backup!");
+                MessageBox.Show("Error , unable to backup!" + ex);
             }
         }
 

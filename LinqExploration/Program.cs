@@ -72,7 +72,21 @@ namespace LinqExploration
 
             // Attempt to connect to MySQL DB
             var db = new DBConnect();
-            Console.WriteLine(db);
+
+            // Write to db
+            db.Insert("INSERT INTO People (name, age) VALUES ('Sean', 30);");
+
+            // Read from db
+            var data = db.Select("SELECT * FROM LinqExploration.People;");
+
+            // Display list
+            foreach (List<string> rec in data)
+            {
+                foreach (string value in rec)
+                {
+                    Console.WriteLine(value);
+                }
+            }
         }
     }
 }
