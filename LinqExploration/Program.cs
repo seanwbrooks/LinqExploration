@@ -18,12 +18,9 @@ namespace LinqExploration
             var data = db.Select("SELECT * FROM LinqExploration.People;");
 
             // Display list
-            foreach (List<string> rec in data)
+            foreach (object rec in data)
             {
-                foreach (string value in rec)
-                {
-                    Console.WriteLine(value);
-                }
+               Console.WriteLine(rec);
             }
         }
     }

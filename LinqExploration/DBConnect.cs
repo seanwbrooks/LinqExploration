@@ -129,14 +129,10 @@ namespace LinqExploration
         }
 
         //Select statement
-        public List<string>[] Select(string query)
+        public List<object> Select(string query)
         {
-
-            //Create a list to store the result
-            List<string>[] list = new List<string>[3];
-            list[0] = new List<string>();
-            list[1] = new List<string>();
-            list[2] = new List<string>();
+            // Create list for storing data
+            var list = new List<object>();
 
             //Open connection
             if (this.OpenConnection() == true)
@@ -146,12 +142,15 @@ namespace LinqExploration
                 //Create a data reader and Execute the command
                 MySqlDataReader dataReader = cmd.ExecuteReader();
 
-                //Read the data and store them in the list
-                while (dataReader.Read())
+                while(dataReader.Read())
                 {
-                    list[0].Add(dataReader["id"] + "");
-                    list[1].Add(dataReader["name"] + "");
-                    list[2].Add(dataReader["age"] + "");
+					Object[] values = new object[dataReader.FieldCount];
+					int fieldCount = dataReader.GetValues(values);
+
+					for (int i = 0; i < fieldCount; i++)
+					{
+						list.Add(values[i]);
+					}
                 }
 
                 //close Data Reader
